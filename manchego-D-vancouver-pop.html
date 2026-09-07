@@ -103,7 +103,7 @@ nav{position:sticky;top:0;z-index:80;background:var(--cream);border-bottom:3px s
   .about{padding:50px 0 40px}
   .about h2{font-size:clamp(30px,8.5vw,42px)}
   .about-portrait-grid{grid-template-columns:1fr!important;gap:20px}
-  .evelyn-photo-card{max-width:280px;margin:0 auto 16px}
+  .evelyn-photo-card{max-width:100%;width:100%;margin:0 auto 16px}
   .mascot-card{padding:14px;box-shadow:6px 6px 0 var(--blue)}
   .menu{padding:20px 0 50px}
   .dish{padding:14px 0}
@@ -126,13 +126,19 @@ nav{position:sticky;top:0;z-index:80;background:var(--cream);border-bottom:3px s
   position:relative;
   background:#fff;
   border:4px solid var(--ink);
-  box-shadow:10px 10px 0 var(--terra);
-  transform:rotate(1.8deg);
-  max-width:320px;
+  box-shadow:12px 12px 0 var(--terra);
+  transform:rotate(1deg);
+  width:100%;
+  max-width:440px;
+  border-radius:2px;
+  overflow:visible;
 }
 .evelyn-photo-card img{
   width:100%;
   height:auto;
+  max-height:420px;
+  object-fit:cover;
+  object-position:center top;
   display:block;
 }
 .evelyn-photo-badge{
