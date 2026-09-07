@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manchego — Stone Fruit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,60,1;1,9..144,300..900,60,1&family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --milk:#FFFBF2;
+  --apricot:#F0A868;
+  --apricot-deep:#E2853C;
+  --plum:#2E1A22;
+  --berry:#BE2F49;
+  --orchard:#6E8F5A;
+  --shell:#FBE9D4;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--milk);color:var(--plum);
+ font-family:"Familjen Grotesk",system-ui,sans-serif;font-size:18px;line-height:1.6}
+h1,h2,h3,.fr{font-family:"Fraunces",Georgia,serif;font-variation-settings:"SOFT" 60,"WONK" 1;
+ font-weight:700;line-height:.94;letter-spacing:-.02em;margin:0}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(255,251,242,.92);backdrop-filter:blur(8px)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.mark{font-family:"Fraunces";font-weight:900;font-size:29px;letter-spacing:-.03em;text-decoration:none;font-variation-settings:"SOFT" 60,"WONK" 1}
+.nav-links{display:flex;gap:28px;font-size:16px;font-weight:500}
+.nav-links a{text-decoration:none;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-3px;height:2px;background:var(--berry);transition:right .25s}
+.nav-links a:hover::after,.nav-links a:focus-visible::after{right:0}
+.inq{text-decoration:none;font-weight:600;font-size:16px;background:var(--plum);color:var(--milk);
+ padding:11px 20px;border-radius:999px}
+.inq:hover{background:var(--berry)}
+@media(max-width:840px){.nav-links{display:none}}
+
+.hero{padding:22px 0 0;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(58px,10.6vw,168px);font-weight:800}
+.hero h1 .lite{font-weight:300;font-style:italic;color:var(--berry)}
+.hero-row{display:flex;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-top:26px}
+.hero-row p{max-width:38ch;font-size:20px;margin:0}
+.blob{width:132px;height:132px;background:var(--apricot);border-radius:62% 38% 46% 54%/48% 56% 44% 52%;flex:none}
+.hero-photo{margin-top:44px;height:56vh;min-height:340px;border-radius:280px 280px 34px 34px;
+ background:linear-gradient(160deg,var(--shell),var(--apricot));display:grid;place-items:center;
+ color:rgba(46,26,34,.45);font-size:14px;letter-spacing:.12em;font-weight:600}
+.tape{background:var(--berry);color:var(--milk);margin-top:-1px;overflow:hidden;white-space:nowrap}
+.tape div{display:inline-block;animation:sl 30s linear infinite;padding:12px 0;font-family:"Fraunces";font-weight:600;font-size:21px}
+.tape span{padding:0 26px}
+@keyframes sl{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.tape div{animation:none}}
+
+.sec{padding:96px 0}
+.eyebrow{font-family:"Fraunces";font-style:italic;font-weight:400;font-size:22px;color:var(--berry);margin-bottom:12px}
+.two{display:grid;grid-template-columns:1fr 1.25fr;gap:64px;align-items:start}
+.two h2{font-size:clamp(40px,5.4vw,76px)}
+.body-col{max-width:56ch}
+.body-col p{margin:0 0 18px}
+@media(max-width:840px){.two{grid-template-columns:1fr;gap:24px}}
+
+.menu-list{margin-top:30px}
+.dish{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:baseline;padding:26px 0;border-bottom:1px dashed rgba(46,26,34,.25)}
+.dish h3{font-size:clamp(30px,4vw,52px);font-weight:700}
+.dish p{margin:6px 0 0;color:#6a5a5f;max-width:52ch}
+.dish .price{font-family:"Fraunces";font-weight:600;font-size:23px;color:var(--berry);white-space:nowrap}
+.dish:hover h3{font-variation-settings:"SOFT" 60,"WONK" 1;font-style:italic;color:var(--berry)}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.pill{padding:30px 26px;border-radius:26px}
+.pill:nth-child(1){background:var(--shell)}
+.pill:nth-child(2){background:var(--apricot);border-radius:26px 26px 120px 26px}
+.pill:nth-child(3){background:var(--orchard);color:var(--milk);border-radius:120px 26px 26px 26px}
+.pill h3{font-size:28px;margin-bottom:8px}
+.pill p{margin:0;font-size:16px;opacity:.85}
+@media(max-width:800px){.cards{grid-template-columns:1fr}}
+
+.quote{background:var(--plum);color:var(--milk);padding:96px 0}
+.quote p{font-family:"Fraunces";font-weight:300;font-style:italic;font-size:clamp(28px,4.4vw,58px);line-height:1.14;max-width:20ch;margin:0}
+.quote cite{display:block;margin-top:28px;font-family:"Familjen Grotesk";font-style:normal;font-size:16px;color:#c8a9b0}
+
+/* BOOKING */
+.book{padding:96px 0 110px;background:var(--shell)}
+.book-top{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;flex-wrap:wrap}
+.book h2{font-size:clamp(44px,7vw,104px)}
+.dots{display:flex;gap:9px;align-items:center;margin:30px 0 22px}
+.dots b{width:11px;height:11px;border-radius:50%;background:rgba(46,26,34,.18);display:block;transition:all .3s}
+.dots b.on{background:var(--berry);transform:scale(1.5)}
+.dots b.done{background:var(--plum)}
+.dots em{font-style:normal;margin-left:12px;font-size:15px;color:#7b6a6f}
+.card{background:var(--milk);border-radius:34px;padding:46px 48px;min-height:400px;display:flex;flex-direction:column;
+ box-shadow:0 26px 60px -40px rgba(46,26,34,.55)}
+.q{font-family:"Fraunces";font-weight:700;font-size:clamp(32px,4.6vw,60px);line-height:1;margin-bottom:8px}
+.q .num{font-style:italic;font-weight:300;color:var(--apricot-deep);margin-right:14px}
+.hint{color:#7b6a6f;margin:0 0 26px}
+.opts{display:flex;flex-wrap:wrap;gap:11px}
+.opt{font-family:"Familjen Grotesk";font-size:17px;font-weight:500;padding:12px 22px;border-radius:999px;
+ border:1.5px solid rgba(46,26,34,.25);background:transparent;cursor:pointer;color:var(--plum)}
+.opt:hover{border-color:var(--berry);color:var(--berry)}
+.opt[aria-pressed="true"]{background:var(--berry);border-color:var(--berry);color:var(--milk)}
+label{display:block;font-size:14px;color:#7b6a6f;margin-bottom:4px}
+input,textarea{font-family:"Familjen Grotesk";font-size:19px;color:var(--plum);width:100%;max-width:520px;
+ background:transparent;border:0;border-bottom:1.5px solid rgba(46,26,34,.3);padding:9px 2px}
+input:focus,textarea:focus{outline:0;border-color:var(--berry)}
+.field+.field{margin-top:20px}
+.row{margin-top:auto;padding-top:32px;display:flex;justify-content:space-between;gap:14px;align-items:center}
+.btn{font-family:"Familjen Grotesk";font-weight:600;font-size:17px;border-radius:999px;padding:13px 26px;cursor:pointer;border:0;
+ background:var(--plum);color:var(--milk)}
+.btn:hover{background:var(--berry)}
+.btn.ghost{background:transparent;color:var(--plum);border:1.5px solid rgba(46,26,34,.25)}
+.btn.ghost:hover{background:rgba(46,26,34,.06);color:var(--plum)}
+.btn[disabled]{opacity:.3;cursor:not-allowed}
+.recap{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.chip{border:0;background:var(--shell);border-radius:999px;padding:7px 14px;font-size:14px;cursor:pointer;font-family:"Familjen Grotesk";color:var(--plum)}
+.chip:hover{background:var(--apricot)}
+@media(max-width:700px){.card{padding:30px 24px;border-radius:26px}}
+
+footer{background:var(--plum);color:var(--milk);padding:80px 0 44px}
+footer h3{font-size:clamp(56px,13vw,180px);font-weight:900;line-height:.82}
+footer h3 i{font-weight:300;color:var(--apricot)}
+.f-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:36px;margin-top:40px}
+footer a{color:#cbb6bb;text-decoration:none;display:block;padding:5px 0}
+footer a:hover{color:var(--apricot)}
+.f-lab{font-family:"Fraunces";font-style:italic;color:var(--apricot);margin-bottom:8px}
+@media(max-width:760px){.f-grid{grid-template-columns:1fr}}
+:focus-visible{outline:3px solid var(--berry);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nav-in">
+  <a class="mark" href="#">Manchego</a>
+  <div class="nav-links"><a href="#menu">Menu</a><a href="#cater">Catering</a><a href="#cater">Events</a><a href="#about">About</a></div>
+  <a class="inq" href="#book">Inquire ↗</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <h1>Dessert that <span class="lite">walks around</span> the room.</h1>
+  <div class="hero-row">
+    <div class="blob" aria-hidden="true"></div>
+    <p>Mini pancakes, parfaits and grazing, cooked on site for weddings and parties across the Okanagan and the coast.</p>
+  </div>
+  <div class="hero-photo">FULL-BLEED HERO PHOTOGRAPHY</div>
+</div></header>
+
+<div class="tape"><div>
+ <span>40 guest minimum</span><span>·</span><span>20 minute setup</span><span>·</span><span>cooked in front of you</span><span>·</span><span>six sauces</span><span>·</span>
+ <span>40 guest minimum</span><span>·</span><span>20 minute setup</span><span>·</span><span>cooked in front of you</span><span>·</span><span>six sauces</span><span>·</span>
+</div></div>
+
+<section class="sec wrap" id="about">
+  <div class="two">
+    <div>
+      <div class="eyebrow">the short version</div>
+      <h2>We started at a market with one plate and a folding table.</h2>
+    </div>
+    <div class="body-col">
+      <p>Manchego cooks Dutch-style mini pancakes to order. Not warmed. Not stacked in a chafing dish an hour before service. Cooked, on a cast-iron plate, in front of the person eating them.</p>
+      <p>That turned out to matter more than the recipe. The cart pulls people out of their seats, gives shy guests something to do with their hands, and fills the awkward hour between dinner and dancing better than any plated dessert we have seen.</p>
+      <p>Now there are three carts, a parfait build, and a grazing table we assemble on site over ninety minutes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap" id="menu" style="padding-top:0">
+  <div class="eyebrow">what we bring</div>
+  <h2 style="font-size:clamp(40px,6vw,84px)">The menu</h2>
+  <div class="menu-list">
+    <div class="dish"><div><h3>Mini pancake bar</h3><p>Thirty per guest. Belgian chocolate, salted caramel, berry compote, lemon curd, cinnamon sugar, maple.</p></div><div class="price">$14 / guest</div></div>
+    <div class="dish"><div><h3>Yogurt parfait cart</h3><p>Layered to order. House granola, BC berries, honey, coconut. Our most requested morning-after service.</p></div><div class="price">$11 / guest</div></div>
+    <div class="dish"><div><h3>Grazing table</h3><p>Built on site. Okanagan cheese, cured meats, stone fruit in season, and far too many crackers.</p></div><div class="price">$22 / guest</div></div>
+    <div class="dish"><div><h3>Full service</h3><p>Cart, staff, service ware, cleanup, and a timeline we actually stick to.</p></div><div class="price">Quoted</div></div>
+  </div>
+</section>
+
+<section class="sec wrap" id="cater" style="padding-top:0">
+  <div class="eyebrow">the practical bit</div>
+  <h2 style="font-size:clamp(36px,5vw,68px)">What a venue needs to know</h2>
+  <div class="cards">
+    <div class="pill"><h3>8ft by 4ft</h3><p>That is the whole footprint. We bring our own power and water, indoors or out with cover.</p></div>
+    <div class="pill"><h3>20 minutes</h3><p>Setup, start to serving. We arrive quietly and stay out of the photographer's frame.</p></div>
+    <div class="pill"><h3>40 guests</h3><p>Our minimum. Above 120 we send a second cart so nobody stands in a line.</p></div>
+  </div>
+</section>
+
+<section class="quote"><div class="wrap">
+  <p>Half the reception ended up standing around the cart. Nobody sat back down.</p>
+  <cite>Jenna &amp; Marc — Predator Ridge, August</cite>
+</div></section>
+
+<section class="book" id="book"><div class="wrap">
+  <div class="book-top">
+    <div><div class="eyebrow">let's talk</div><h2>Tell us about your event</h2></div>
+    <p style="max-width:34ch;margin:0;color:#7b6a6f">Seven quick questions. You get a real quote back within one business day.</p>
+  </div>
+  <div class="dots" id="dots"></div>
+  <form class="card" id="stage" autocomplete="on"></form>
+</div></section>
+
+<footer><div class="wrap">
+  <h3>Manch<i>ego</i></h3>
+  <div class="f-grid">
+    <p style="max-width:32ch;color:#cbb6bb;margin:0">Mini pancakes, parfaits and grazing for events across British Columbia.</p>
+    <div><div class="f-lab">Visit</div><a href="#menu">Menu</a><a href="#cater">Catering</a><a href="#cater">Events</a><a href="#about">About</a></div>
+    <div><div class="f-lab">Reach us</div><a href="#">hello@manchego.ca</a><a href="#">250 555 0148</a><a href="#">Instagram</a></div>
+  </div>
+</div></footer>
+
+<script>
+const STEPS=[
+ {k:'occasion',q:"What's the occasion?",h:"Pick the closest fit — we can adjust later.",t:'choice',o:['Wedding','Birthday','Corporate','Private party','Market','Something else']},
+ {k:'date',q:"When is it?",h:"A rough date is fine if you're still deciding.",t:'date'},
+ {k:'place',q:"Where are we going?",h:"Venue name, or just the city.",t:'text',ph:'Predator Ridge, Vernon'},
+ {k:'guests',q:"How many hungry humans?",h:"Our minimum is 40.",t:'number',ph:'120'},
+ {k:'service',q:"What are you thinking?",h:"Choose as many as you like.",t:'multi',o:['Mini pancakes','Parfait cart','Grazing table','Full service','Not sure yet']},
+ {k:'notes',q:"Anything else?",h:"Timelines, allergies, the uncle who eats forty.",t:'area'},
+ {k:'you',q:"Your details.",h:"So we know where to send the quote.",t:'contact'}
+];
+let i=0;const A={};
+const stage=document.getElementById('stage'),dots=document.getElementById('dots');
+dots.innerHTML=STEPS.map(()=>'<b></b>').join('')+'<em></em>';
+const bars=[...dots.querySelectorAll('b')],cnt=dots.querySelector('em');
+
+function paint(){
+ const s=STEPS[i];
+ bars.forEach((b,n)=>b.className=n<i?'done':n===i?'on':'');
+ cnt.textContent=(i+1)+' of '+STEPS.length;
+ let body='';
+ if(s.t==='choice'||s.t==='multi'){
+  const cur=A[s.k]||(s.t==='multi'?[]:'');
+  body='<div class="opts">'+s.o.map(o=>`<button type="button" class="opt" aria-pressed="${s.t==='multi'?cur.includes(o):cur===o}" data-o="${o}">${o}</button>`).join('')+'</div>';
+ }else if(s.t==='contact'){
+  body=`<div class="field"><label for="f-name">Name</label><input id="f-name" value="${A.name||''}" placeholder="Priya Sandhu"></div>
+  <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" value="${A.email||''}" placeholder="you@email.com"></div>
+  <div class="field"><label for="f-phone">Phone</label><input id="f-phone" type="tel" value="${A.phone||''}" placeholder="250 555 0148"></div>`;
+ }else if(s.t==='area'){
+  body=`<div class="field"><textarea id="f-in" rows="3" placeholder="Dinner ends at 8, dessert at 9…">${A[s.k]||''}</textarea></div>`;
+ }else{
+  const t=s.t==='date'?'date':s.t==='number'?'number':'text';
+  body=`<div class="field"><input id="f-in" type="${t}" value="${A[s.k]||''}" placeholder="${s.ph||''}"></div>`;
+ }
+ let recap='';
+ if(i>0)recap='<div class="recap">'+STEPS.slice(0,i).map((st,n)=>{const v=A[st.k];
+   if(!v||(Array.isArray(v)&&!v.length))return'';
+   return `<button type="button" class="chip" data-goto="${n}">${Array.isArray(v)?v.join(', '):v} ✎</button>`}).join('')+'</div>';
+ stage.innerHTML=`<div class="q"><span class="num">${i+1}</span>${s.q}</div><p class="hint">${s.h}</p>${body}${recap}
+ <div class="row"><button type="button" class="btn ghost" id="back" ${i===0?'disabled':''}>← Back</button>
+ <button type="button" class="btn" id="next">${i===STEPS.length-1?'Send inquiry ↗':'Next'}</button></div>`;
+ const f=stage.querySelector('input,textarea');if(f&&window.innerWidth>820)f.focus();
+}
+stage.addEventListener('click',e=>{
+ const s=STEPS[i],o=e.target.closest('.opt');
+ if(o){const v=o.dataset.o;
+  if(s.t==='multi'){const c=A[s.k]||[];A[s.k]=c.includes(v)?c.filter(x=>x!==v):[...c,v];paint()}
+  else{A[s.k]=v;setTimeout(()=>{i++;paint()},140)}return}
+ const g=e.target.closest('.chip');if(g){i=+g.dataset.goto;paint();return}
+ if(e.target.id==='back'){save();if(i>0){i--;paint()}return}
+ if(e.target.id==='next'){save();if(i<STEPS.length-1){i++;paint()}else finish()}
+});
+function save(){const s=STEPS[i];
+ if(s.t==='contact'){A.name=v('f-name');A.email=v('f-email');A.phone=v('f-phone')}
+ else if(['text','date','number','area'].includes(s.t))A[s.k]=v('f-in')}
+function v(id){const e=document.getElementById(id);return e?e.value:''}
+function finish(){
+ bars.forEach(b=>b.className='done');cnt.textContent='sent';
+ stage.innerHTML=`<div class="q" style="color:var(--berry)">The batter is already on.</div>
+ <p style="font-size:20px;max-width:44ch">Thanks ${A.name?A.name.split(' ')[0]:'—'}. We have your ${A.occasion?A.occasion.toLowerCase():'event'}${A.place?' at '+A.place:''}${A.guests?' for '+A.guests+' guests':''}.</p>
+ <p style="color:#7b6a6f;max-width:44ch">Sav reads every inquiry herself and answers within one business day. If your date is inside three weeks, call 250 555 0148 and we'll move faster.</p>
+ <div class="row"><span></span><button type="button" class="btn" onclick="location.reload()">Start another inquiry</button></div>`;
+ stage.scrollIntoView({behavior:'smooth',block:'center'});
+}
+paint();
+</script>
+</body>
+</html>

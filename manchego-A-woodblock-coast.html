@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manchego — Woodblock Coast</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;800;900&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brick:#A63A19;
+  --brick-deep:#7E2A11;
+  --bone:#F0E7D6;
+  --char:#191512;
+  --lake:#1D4A57;
+  --chalk:#D8C7A8;
+  --wood: #C1794A;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bone);color:var(--char);
+  font-family:"Newsreader",Georgia,serif;font-size:18px;line-height:1.55;
+  font-optical-sizing:auto;
+}
+h1,h2,h3,.disp{font-family:"Big Shoulders Display",sans-serif;font-weight:800;line-height:.86;letter-spacing:-.005em;margin:0}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.rule{height:2px;background:var(--char)}
+.hair{height:1px;background:color-mix(in srgb,var(--char) 30%,transparent)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:60;background:var(--bone);border-bottom:2px solid var(--char)}
+.nav-in{display:flex;align-items:stretch;justify-content:space-between;gap:24px;height:62px}
+.mark{font-family:"Big Shoulders Display";font-weight:900;font-size:30px;letter-spacing:.02em;align-self:center;text-transform:uppercase}
+.mark span{color:var(--brick)}
+.nav-links{display:flex;align-items:center;gap:30px;font-size:15px;letter-spacing:.02em}
+.nav-links a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+.nav-links a:hover,.nav-links a:focus-visible{border-color:var(--brick)}
+.inq{align-self:center;background:var(--brick);color:var(--bone);text-decoration:none;
+  font-family:"Big Shoulders Display";font-weight:800;font-size:19px;letter-spacing:.04em;
+  padding:9px 16px 7px;text-transform:uppercase}
+.inq:hover{background:var(--char)}
+@media(max-width:820px){.nav-links{display:none}}
+
+/* HERO */
+.hero{border-bottom:2px solid var(--char);background:var(--brick);color:var(--bone);overflow:hidden}
+.hero-in{display:grid;grid-template-columns:1.15fr .85fr;min-height:76vh}
+.hero-l{padding:46px 28px 30px;display:flex;flex-direction:column;justify-content:space-between;border-right:2px solid var(--char)}
+.hero-l h1{font-size:clamp(72px,12.4vw,196px);text-transform:uppercase;font-weight:900}
+.hero-l h1 em{font-style:normal;display:block;color:var(--char)}
+.kicker{font-size:17px;max-width:34ch;line-height:1.45;color:var(--chalk)}
+.hero-foot{display:flex;gap:26px;flex-wrap:wrap;align-items:baseline;font-size:15px;color:var(--chalk);margin-top:30px}
+.hero-r{position:relative;background:
+   repeating-linear-gradient(-38deg,#8f3316 0 14px,#96371a 14px 28px);}
+.photo-slot{position:absolute;inset:0;display:grid;place-items:center;color:rgba(240,231,214,.55);font-size:13px;letter-spacing:.14em;font-family:"Big Shoulders Display";font-weight:600}
+@media(max-width:900px){.hero-in{grid-template-columns:1fr}.hero-l{border-right:0;border-bottom:2px solid var(--char)}.hero-r{height:46vh}}
+
+/* MARQUEE */
+.strip{background:var(--char);color:var(--bone);border-bottom:2px solid var(--char);overflow:hidden;white-space:nowrap}
+.strip div{display:inline-block;padding:11px 0;font-family:"Big Shoulders Display";font-weight:600;font-size:19px;letter-spacing:.1em;text-transform:uppercase;animation:sl 34s linear infinite}
+.strip span{padding:0 22px;opacity:.9}
+.strip b{color:var(--wood)}
+@keyframes sl{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.strip div{animation:none}}
+
+/* WHAT */
+.what{padding:76px 0 20px}
+.what-grid{display:grid;grid-template-columns:1fr 2fr;gap:60px}
+.section-no{font-family:"Big Shoulders Display";font-weight:800;font-size:15px;letter-spacing:.16em;color:var(--brick)}
+.lede{font-size:clamp(23px,2.5vw,34px);line-height:1.28;max-width:24ch;font-weight:300}
+.cols{columns:2;column-gap:44px;font-size:17px;max-width:62ch}
+.cols p{margin:0 0 16px}
+@media(max-width:820px){.what-grid{grid-template-columns:1fr;gap:26px}.cols{columns:1}}
+
+/* MENU */
+.menu{padding:70px 0 90px}
+.menu h2{font-size:clamp(56px,9vw,132px);text-transform:uppercase;margin-bottom:8px}
+.item{display:grid;grid-template-columns:52px 1fr auto;gap:22px;padding:22px 0;border-top:1px solid rgba(25,21,18,.28);align-items:start}
+.item:last-child{border-bottom:1px solid rgba(25,21,18,.28)}
+.item .n{font-family:"Big Shoulders Display";font-weight:600;color:var(--brick);font-size:17px;padding-top:6px}
+.item h3{font-size:34px;text-transform:uppercase}
+.item p{margin:4px 0 0;font-size:16px;max-width:56ch;color:#4a423b}
+.item .pr{font-family:"Big Shoulders Display";font-weight:800;font-size:26px;white-space:nowrap;padding-top:4px}
+.item:hover h3{color:var(--brick)}
+@media(max-width:700px){.item{grid-template-columns:1fr auto;gap:10px}.item .n{display:none}}
+
+/* SPLIT / EVENTS */
+.events{background:var(--lake);color:var(--bone);border-block:2px solid var(--char)}
+.ev-in{display:grid;grid-template-columns:1fr 1fr}
+.ev-photo{min-height:520px;background:repeating-linear-gradient(90deg,#1a4350 0 18px,#1d4a57 18px 36px);position:relative;border-right:2px solid var(--char)}
+.ev-copy{padding:64px 46px}
+.ev-copy h2{font-size:clamp(46px,6vw,86px);text-transform:uppercase;margin-bottom:20px}
+.ev-copy p{max-width:44ch;color:#d3e2e5}
+.ev-list{list-style:none;padding:0;margin:30px 0 0}
+.ev-list li{padding:13px 0;border-top:1px solid rgba(240,231,214,.3);display:flex;justify-content:space-between;gap:18px;font-size:16px}
+.ev-list li i{font-style:normal;color:#9fbcc2}
+@media(max-width:860px){.ev-in{grid-template-columns:1fr}.ev-photo{min-height:280px;border-right:0;border-bottom:2px solid var(--char)}.ev-copy{padding:44px 28px}}
+
+/* FORM */
+.book{padding:84px 0 100px}
+.book-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:26px}
+.book-head h2{font-size:clamp(52px,8vw,116px);text-transform:uppercase}
+.progress{display:flex;gap:5px;margin-bottom:34px}
+.progress i{height:8px;flex:1;background:rgba(25,21,18,.16);display:block}
+.progress i.on{background:var(--brick)}
+.progress i.done{background:var(--char)}
+.stage{border:2px solid var(--char);background:var(--bone);min-height:430px;display:grid;grid-template-columns:230px 1fr}
+.stage-side{border-right:2px solid var(--char);padding:26px 22px;background:var(--char);color:var(--bone)}
+.stage-side .step-n{font-family:"Big Shoulders Display";font-weight:900;font-size:96px;line-height:.8;color:var(--wood)}
+.stage-side p{font-size:14px;color:#b8ada0;margin-top:14px;line-height:1.4}
+.stage-main{padding:38px 40px 30px;display:flex;flex-direction:column}
+.q{font-family:"Big Shoulders Display";font-weight:800;font-size:clamp(34px,4.4vw,58px);text-transform:uppercase;line-height:.9;margin-bottom:6px}
+.hint{color:#6a5f56;font-size:16px;margin-bottom:26px}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{font-family:"Big Shoulders Display";font-weight:600;font-size:22px;text-transform:uppercase;letter-spacing:.02em;
+  padding:12px 18px 9px;border:2px solid var(--char);background:transparent;cursor:pointer;color:var(--char)}
+.opt:hover{background:var(--chalk)}
+.opt[aria-pressed="true"]{background:var(--brick);border-color:var(--brick);color:var(--bone)}
+input,textarea{font-family:"Newsreader",serif;font-size:19px;color:var(--char);background:transparent;
+  border:0;border-bottom:2px solid var(--char);padding:10px 2px;width:100%;max-width:520px}
+input:focus,textarea:focus{outline:0;border-color:var(--brick)}
+.field+.field{margin-top:22px}
+label{display:block;font-family:"Big Shoulders Display";font-weight:600;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:#6a5f56;margin-bottom:2px}
+.nav-row{margin-top:auto;padding-top:30px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.btn{font-family:"Big Shoulders Display";font-weight:800;font-size:22px;text-transform:uppercase;letter-spacing:.04em;
+  border:2px solid var(--char);background:var(--char);color:var(--bone);padding:12px 22px 9px;cursor:pointer}
+.btn:hover{background:var(--brick);border-color:var(--brick)}
+.btn.ghost{background:transparent;color:var(--char)}
+.btn.ghost:hover{background:var(--chalk);color:var(--char)}
+.btn[disabled]{opacity:.3;cursor:not-allowed}
+.answers{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{font-size:14px;border:1px solid rgba(25,21,18,.4);padding:5px 10px;cursor:pointer;background:transparent;font-family:"Newsreader",serif}
+.chip:hover{border-color:var(--brick);color:var(--brick)}
+.done-card{padding:56px 40px;text-align:left}
+.done-card h3{font-size:clamp(44px,6vw,86px);text-transform:uppercase;color:var(--brick);margin-bottom:14px}
+@media(max-width:820px){
+  .stage{grid-template-columns:1fr}
+  .stage-side{border-right:0;border-bottom:2px solid var(--char);display:flex;align-items:baseline;gap:16px;padding:16px 20px}
+  .stage-side .step-n{font-size:52px}
+  .stage-side p{margin:0;font-size:13px}
+  .stage-main{padding:26px 20px 22px}
+}
+footer{background:var(--char);color:var(--bone);padding:64px 0 40px;border-top:2px solid var(--char)}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer h3{font-size:clamp(60px,11vw,150px);text-transform:uppercase;color:var(--bone);line-height:.8}
+footer h3 em{font-style:normal;color:var(--wood)}
+footer a{color:#c9bdb0;text-decoration:none;display:block;padding:5px 0;font-size:16px}
+footer a:hover{color:var(--bone)}
+.f-lab{font-family:"Big Shoulders Display";font-weight:600;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--wood);margin-bottom:8px}
+@media(max-width:760px){.f-grid{grid-template-columns:1fr;gap:26px}}
+:focus-visible{outline:3px solid var(--lake);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nav-in">
+  <a class="mark" href="#" style="text-decoration:none">Manch<span>ego</span></a>
+  <div class="nav-links">
+    <a href="#menu">Menu</a><a href="#events">Catering</a><a href="#events">Events</a><a href="#about">About</a>
+  </div>
+  <a class="inq" href="#book">Inquire ↗</a>
+</div></nav>
+
+<header class="hero"><div class="hero-in">
+  <div class="hero-l">
+    <div>
+      <div style="font-family:'Big Shoulders Display';font-weight:600;letter-spacing:.16em;font-size:14px;color:var(--chalk);margin-bottom:22px">Okanagan &amp; Lower Mainland · Since 2021</div>
+      <h1>Thirty<br>pancakes<em>per guest</em></h1>
+    </div>
+    <div>
+      <p class="kicker">A mini pancake and grazing cart that shows up, sets up in twenty minutes, and cooks in front of your people until they stop coming back.</p>
+      <div class="hero-foot">
+        <span>Weddings</span><span>Corporate</span><span>Markets</span><span>Birthdays</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-r"><div class="photo-slot">FULL-BLEED CART PHOTOGRAPHY</div></div>
+</div></header>
+
+<div class="strip"><div>
+  <span>Mini pancakes</span><b>◆</b><span>Yogurt parfait cart</span><b>◆</b><span>Grazing tables</span><b>◆</b><span>Kelowna</span><b>◆</b><span>Vernon</span><b>◆</b><span>Vancouver</span><b>◆</b><span>Mini pancakes</span><b>◆</b><span>Yogurt parfait cart</span><b>◆</b><span>Grazing tables</span><b>◆</b><span>Kelowna</span><b>◆</b><span>Vernon</span><b>◆</b><span>Vancouver</span><b>◆</b>
+</div></div>
+
+<section class="what wrap" id="about">
+  <div class="what-grid">
+    <div>
+      <div class="section-no">01 / Who shows up</div>
+      <p class="lede">We are two carts, one van, and a batter recipe we have not changed since the first farmers market.</p>
+    </div>
+    <div class="cols">
+      <p>Manchego started as a weekend stall in Kelowna, cooking Dutch-style mini pancakes on a cast-iron plate because a friend's wedding had a dessert gap and no budget for a cake table.</p>
+      <p>The format stuck. Guests eat standing up, they talk to whoever is holding the tongs, and nobody sits through a plated dessert course. It is catering that behaves like a bar.</p>
+      <p>Today we run pancakes, parfaits, and grazing across the Okanagan and down to the coast. Same cart, same plate, more sauces.</p>
+      <p>Everything is cooked live. Nothing arrives pre-plated in a hotel pan.</p>
+    </div>
+  </div>
+</section>
+
+<section class="menu wrap" id="menu">
+  <div class="section-no">02 / What we cook</div>
+  <h2>The plate</h2>
+  <div class="item"><div class="n">MP</div><div><h3>Mini pancake bar</h3><p>Thirty per guest, cooked to order. Six sauces, four toppings, one very serious jug of Belgian chocolate.</p></div><div class="pr">$14 / guest</div></div>
+  <div class="item"><div class="n">YP</div><div><h3>Yogurt parfait cart</h3><p>Layered to order in front of guests. Berries, house granola, honey. The morning-after-the-wedding order.</p></div><div class="pr">$11 / guest</div></div>
+  <div class="item"><div class="n">GZ</div><div><h3>Grazing table</h3><p>Built on site over ninety minutes. BC cheese, cured meat, fruit, and a wall of crackers that never survives.</p></div><div class="pr">$22 / guest</div></div>
+  <div class="item"><div class="n">FC</div><div><h3>Full service</h3><p>Cart, staff, cutlery, service ware, and cleanup. For anything over 120 people or anything with a timeline.</p></div><div class="pr">Quoted</div></div>
+</section>
+
+<section class="events" id="events"><div class="ev-in">
+  <div class="ev-photo"><div class="photo-slot">EVENT / VENUE PHOTOGRAPHY</div></div>
+  <div class="ev-copy">
+    <div class="section-no" style="color:var(--wood)">03 / Where we go</div>
+    <h2>Bring the cart</h2>
+    <p>We travel with our own power, our own water, and a footprint of eight feet by four. Most venues say yes before we finish the sentence.</p>
+    <ul class="ev-list">
+      <li><span>Setup time</span><i>20 minutes</i></li>
+      <li><span>Service window</span><i>90 min to 4 hours</i></li>
+      <li><span>Minimum guests</span><i>40</i></li>
+      <li><span>Travel included</span><i>Kelowna to Vernon</i></li>
+      <li><span>Indoor / outdoor</span><i>Both, with cover</i></li>
+    </ul>
+  </div>
+</div></section>
+
+<section class="book wrap" id="book">
+  <div class="book-head">
+    <div><div class="section-no">04 / Book us</div><h2>Tell us about it</h2></div>
+    <p style="max-width:36ch;margin:0;color:#6a5f56">Seven questions. Ninety seconds. We reply within one business day with a real number, not a brochure.</p>
+  </div>
+
+  <div class="progress" id="prog" aria-hidden="true"></div>
+
+  <form class="stage" id="stage" autocomplete="on">
+    <aside class="stage-side">
+      <div class="step-n" id="stepN">01</div>
+      <p id="stepLabel">Question one of seven</p>
+    </aside>
+    <div class="stage-main" id="main"></div>
+  </form>
+</section>
+
+<footer><div class="wrap">
+  <h3>Manch<em>ego</em></h3>
+  <div class="f-grid" style="margin-top:38px">
+    <div><p style="max-width:34ch;color:#c9bdb0;margin:0">Mini pancakes, parfaits and grazing for events across British Columbia &middot; Crafted with Andalusian Soul.</p></div>
+    <div><div class="f-lab">Visit</div><a href="#menu">Menu</a><a href="#events">Catering</a><a href="#events">Events</a><a href="#about">About</a></div>
+    <div><div class="f-lab">Reach us</div><a href="#">hello@manchego.ca</a><a href="#">250 555 0148</a><a href="#" style="display:inline-flex;align-items:center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;vertical-align:-2px;margin-right:4px;" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689-.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>@manchego.cart</a></div>
+  </div>
+</div></footer>
+
+<script>
+const STEPS=[
+ {k:'occasion',q:"What's the occasion?",h:"Pick the closest one. We adjust later.",t:'choice',o:['Wedding','Birthday','Corporate','Private party','Market','Other']},
+ {k:'date',q:"When is it?",h:"Approximate is fine if you're still deciding.",t:'date'},
+ {k:'place',q:"Where are we going?",h:"Venue name or just the city.",t:'text',ph:'Sparkling Hill, Vernon'},
+ {k:'guests',q:"How many hungry humans?",h:"Our minimum is 40 guests.",t:'number',ph:'120'},
+ {k:'service',q:"What are you thinking?",h:"Choose as many as you like.",t:'multi',o:['Mini pancakes','Parfait cart','Grazing table','Full service','Not sure yet']},
+ {k:'notes',q:"Anything else we should know?",h:"Timeline, dietary needs, the uncle who eats forty.",t:'area'},
+ {k:'you',q:"Your details.",h:"So we can send the quote.",t:'contact'}
+];
+let i=0; const A={};
+const main=document.getElementById('main'),prog=document.getElementById('prog');
+prog.innerHTML=STEPS.map(()=>'<i></i>').join('');
+const bars=[...prog.children];
+
+function paint(){
+ const s=STEPS[i];
+ document.getElementById('stepN').textContent=String(i+1).padStart(2,'0');
+ document.getElementById('stepLabel').textContent='Question '+(i+1)+' of '+STEPS.length;
+ bars.forEach((b,n)=>{b.className=n<i?'done':n===i?'on':''});
+ let body='';
+ if(s.t==='choice'||s.t==='multi'){
+   const cur=A[s.k]||(s.t==='multi'?[]:'');
+   body='<div class="opts">'+s.o.map(o=>`<button type="button" class="opt" aria-pressed="${s.t==='multi'?cur.includes(o):cur===o}" data-o="${o}">${o}</button>`).join('')+'</div>';
+ } else if(s.t==='contact'){
+   body=`<div class="field"><label for="f-name">Name</label><input id="f-name" name="name" value="${A.name||''}" placeholder="Priya Sandhu"></div>
+   <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" name="email" value="${A.email||''}" placeholder="you@email.com"></div>
+   <div class="field"><label for="f-phone">Phone</label><input id="f-phone" type="tel" name="phone" value="${A.phone||''}" placeholder="250 555 0148"></div>`;
+ } else if(s.t==='area'){
+   body=`<div class="field"><textarea id="f-in" rows="3" placeholder="Guests arrive at 8, dessert at 9…">${A[s.k]||''}</textarea></div>`;
+ } else {
+   const type=s.t==='date'?'date':s.t==='number'?'number':'text';
+   body=`<div class="field"><input id="f-in" type="${type}" value="${A[s.k]||''}" placeholder="${s.ph||''}"></div>`;
+ }
+ let recap='';
+ if(i>0){recap='<div class="answers">'+STEPS.slice(0,i).map((st,n)=>{
+   const v=A[st.k]; if(!v||(Array.isArray(v)&&!v.length))return'';
+   return `<button type="button" class="chip" data-goto="${n}">${Array.isArray(v)?v.join(', '):v} ✎</button>`}).join('')+'</div>';}
+ main.innerHTML=`<div class="q">${s.q}</div><p class="hint">${s.h}</p>${body}${recap}
+  <div class="nav-row">
+    <button type="button" class="btn ghost" id="back" ${i===0?'disabled':''}>← Back</button>
+    <button type="button" class="btn" id="next">${i===STEPS.length-1?'Send inquiry ↗':'Next'}</button>
+  </div>`;
+ const first=main.querySelector('input,textarea'); if(first&&window.innerWidth>820)first.focus();
+}
+main.addEventListener('click',e=>{
+ const s=STEPS[i];
+ const o=e.target.closest('.opt');
+ if(o){const v=o.dataset.o;
+   if(s.t==='multi'){const cur=A[s.k]||[];A[s.k]=cur.includes(v)?cur.filter(x=>x!==v):[...cur,v];paint();}
+   else{A[s.k]=v;setTimeout(()=>{i++;paint()},140);} return;}
+ const g=e.target.closest('.chip'); if(g){i=+g.dataset.goto;paint();return;}
+ if(e.target.id==='back'){save();if(i>0){i--;paint()}return;}
+ if(e.target.id==='next'){save(); if(i<STEPS.length-1){i++;paint()}else finish();}
+});
+function save(){const s=STEPS[i];
+ if(s.t==='contact'){A.name=v('f-name');A.email=v('f-email');A.phone=v('f-phone');}
+ else if(['text','date','number','area'].includes(s.t))A[s.k]=v('f-in');}
+function v(id){const el=document.getElementById(id);return el?el.value:''}
+function finish(){
+ prog.querySelectorAll('i').forEach(b=>b.className='done');
+ document.getElementById('stage').innerHTML=`<aside class="stage-side"><div class="step-n">✓</div><p>Inquiry sent</p></aside>
+ <div class="done-card"><h3>Batter's on.</h3>
+ <p style="max-width:44ch;font-size:19px">Thanks ${A.name?A.name.split(' ')[0]:'—'}. We have your ${A.occasion?A.occasion.toLowerCase():'event'}${A.place?' at '+A.place:''}${A.guests?' for '+A.guests+' guests':''}.</p>
+ <p style="max-width:44ch;color:#6a5f56">Sav reads every inquiry herself and replies within one business day. If it's sooner than three weeks away, call 250 555 0148 and we'll move.</p>
+ <button type="button" class="btn" onclick="location.reload()">Start another inquiry</button></div>`;
+ document.getElementById('stage').scrollIntoView({behavior:'smooth',block:'center'});
+}
+paint();
+</script>
+</body>
+</html>
