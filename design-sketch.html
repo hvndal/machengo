@@ -165,44 +165,53 @@ a {
 }
 
 /* ==========================================================================
-   MINIMALIST HERO / EDITORIAL STATEMENT
+   MINIMALIST UN-CROWDED HERO WITH :) ON TOP
    ========================================================================== */
 .editorial-hero {
-  padding: 56px 0 40px;
+  padding: 48px 0 36px;
   border-bottom: 1px solid var(--line);
+  text-align: center;
 }
 
-.custom-notice-badge {
+.hero-clean-center {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.smile-mark-top {
+  font-family: "DM Mono", monospace;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 5px 14px;
-  background: rgba(217, 85, 43, 0.08);
-  border: 1px solid rgba(217, 85, 43, 0.22);
-  border-radius: 999px;
-  font-family: "DM Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--terra-deep);
-  font-weight: 600;
-  margin-bottom: 20px;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--ink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  background: #FEF08A; /* highlighter yellow */
+  box-shadow: 3px 4px 0px var(--ink);
+  transform: rotate(-5deg);
+  transition: transform 0.2s ease;
+  user-select: none;
 }
 
-.hero-editorial-row {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
+.smile-mark-top:hover {
+  transform: rotate(6deg) scale(1.1);
 }
 
 .hero-main-title {
   font-family: "Instrument Serif", Georgia, serif;
-  font-size: clamp(44px, 6.2vw, 88px);
-  line-height: 0.96;
+  font-size: clamp(38px, 5.2vw, 72px);
+  line-height: 1.02;
   font-weight: 400;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   color: var(--ink);
 }
 
@@ -211,146 +220,99 @@ a {
   color: var(--terra);
 }
 
-.hero-bespoke-statement {
-  max-width: 52ch;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.hero-lead-text {
-  font-family: "Newsreader", Georgia, serif;
-  font-size: clamp(17px, 1.6vw, 21px);
-  line-height: 1.45;
-  color: var(--ink);
-}
-
-.hero-lead-text strong {
-  font-weight: 600;
-  color: var(--terra-deep);
-}
-
-.hero-sub-text {
+.hero-clean-sub {
+  font-family: "DM Mono", monospace;
   font-size: 13.5px;
-  line-height: 1.6;
+  letter-spacing: 0.04em;
   color: var(--ink-secondary);
 }
 
 /* ==========================================================================
-   PROMINENT "CLICK TO DISPLAY" ACTION BANNER
-   ========================================================================== */
-.click-affordance-banner {
-  margin-top: 32px;
-  padding: 14px 22px;
-  background: var(--ink);
-  color: #FFF;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-  box-shadow: 0 6px 20px rgba(22, 20, 18, 0.12);
-}
-
-.banner-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 13.5px;
-  font-weight: 500;
-}
-
-.pulse-indicator {
-  width: 10px;
-  height: 10px;
-  background: var(--terra);
-  border-radius: 50%;
-  box-shadow: 0 0 0 0 rgba(217, 85, 43, 0.7);
-  animation: pulseRing 1.8s infinite;
-  flex: none;
-}
-
-@keyframes pulseRing {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(217, 85, 43, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(217, 85, 43, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(217, 85, 43, 0); }
-}
-
-.banner-left strong {
-  color: #FFF;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
-.banner-right-note {
-  font-family: "DM Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.65);
-  text-transform: uppercase;
-}
-
-/* ==========================================================================
-   MINIMALIST 3-TILE GRID
+   THREE WOBBLY HIGHLIGHTED DESIGN BOXES
    ========================================================================== */
 .tiles-section {
-  padding: 40px 0 72px;
+  padding: 44px 0 72px;
 }
 
 .tiles-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 32px;
   align-items: stretch;
 }
 
 @media (max-width: 1080px) {
   .tiles-grid {
     grid-template-columns: 1fr;
-    gap: 44px;
+    gap: 48px;
   }
 }
 
-/* ==========================================================================
-   INDIVIDUAL MINIMALIST TILE CARD
-   ========================================================================== */
 .tile-card {
   background: var(--bg-card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-subtle);
+  border: 2.5px solid var(--ink);
   display: flex;
   flex-direction: column;
-  transition: var(--transition);
+  overflow: hidden;
   position: relative;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.tile-card:hover {
-  box-shadow: var(--shadow-hover);
-  border-color: var(--line-hover);
-  transform: translateY(-4px);
+/* Unique wobbly outlines for each design box */
+#tile-pop {
+  border-radius: 255px 18px 225px 18px / 18px 225px 18px 255px;
+  box-shadow: 6px 8px 0px var(--ink);
+}
+#tile-pop:hover {
+  transform: translateY(-5px) rotate(-0.5deg);
+  box-shadow: 10px 14px 0px var(--ink);
 }
 
-/* Client Top Favorite styling */
-.tile-card.is-favorite {
-  border: 2px solid var(--terra);
-  box-shadow: 0 16px 44px -10px rgba(217, 85, 43, 0.22);
+#tile-fruit {
+  border-radius: 18px 245px 20px 235px / 235px 20px 245px 18px;
+  box-shadow: 6px 8px 0px var(--ink);
+}
+#tile-fruit:hover {
+  transform: translateY(-5px) rotate(0.4deg);
+  box-shadow: 10px 14px 0px var(--ink);
 }
 
-.favorite-header-pill {
-  background: var(--terra);
-  color: #FFF;
+#tile-coast {
+  border-radius: 240px 22px 255px 20px / 20px 255px 20px 240px;
+  box-shadow: 6px 8px 0px var(--ink);
+}
+#tile-coast:hover {
+  transform: translateY(-5px) rotate(-0.4deg);
+  box-shadow: 10px 14px 0px var(--ink);
+}
+
+/* Wobbly Header Pills */
+.wobbly-header-pill {
   padding: 8px 16px;
   font-family: "DM Mono", monospace;
   font-size: 11px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid var(--ink);
+}
+
+.pill-pop {
+  background: #FEF08A; /* highlighter yellow */
+  color: var(--ink);
+}
+
+.pill-fruit {
+  background: #FED7AA; /* highlighter peach */
+  color: var(--ink);
+}
+
+.pill-coast {
+  background: #FECDD3; /* highlighter rose */
+  color: var(--ink);
 }
 
 /* Tile Header */
@@ -470,22 +432,18 @@ a {
 .click-to-display-pill {
   font-family: "DM Mono", monospace;
   font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #FFF;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  color: var(--ink);
   font-weight: 700;
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  background: var(--terra);
-  padding: 3px 9px;
-  border-radius: 999px;
-  box-shadow: 0 2px 8px rgba(217, 85, 43, 0.35);
+  background: #FFF;
+  padding: 3px 8px;
+  border: 1.5px solid var(--ink);
+  border-radius: 255px 12px 225px 12px / 12px 225px 12px 255px;
   transition: transform 0.2s ease;
-}
-
-.tile-card:hover .click-to-display-pill {
-  transform: scale(1.05);
 }
 
 .browser-url-mono {
@@ -503,49 +461,36 @@ a {
   cursor: pointer;
 }
 
-/* Floating Live Prompt on Viewport */
-.live-tap-prompt {
+/* Floating Wobbly Highlighted Tag on Viewport */
+.wobbly-preview-tag {
   position: absolute;
   bottom: 12px;
   right: 12px;
-  background: rgba(22, 20, 18, 0.9);
-  color: #FFF;
-  backdrop-filter: blur(8px);
-  padding: 5px 12px;
-  border-radius: 999px;
+  border: 1.8px solid var(--ink);
+  border-radius: 255px 12px 225px 14px / 12px 225px 14px 255px;
+  padding: 5px 13px;
   font-family: "DM Mono", monospace;
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 11px;
   font-weight: 700;
-  display: flex;
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  display: inline-flex;
   align-items: center;
   gap: 7px;
   z-index: 5;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
   pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 2px 3px 0px var(--ink);
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.interactive-viewport-link:hover .live-tap-prompt {
+.tag-pop { background: #FEF08A; }
+.tag-fruit { background: #FED7AA; }
+.tag-coast { background: #FECDD3; }
+
+.interactive-viewport-link:hover .wobbly-preview-tag {
   opacity: 0;
   transform: translateY(3px);
-}
-
-.live-pulse-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #22c55e;
-  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-  animation: livePulse 1.8s infinite;
-}
-
-@keyframes livePulse {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-  70% { transform: scale(1.1); box-shadow: 0 0 0 7px rgba(34, 197, 94, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
 }
 
 .scaled-viewport-area {
@@ -685,7 +630,7 @@ a {
   color: #E1306C;
 }
 
-/* Unmissable Click Action Button */
+/* Wobbly Highlighted Click Action with Arrow */
 .tile-action-row {
   margin-top: auto;
   display: flex;
@@ -693,44 +638,62 @@ a {
   gap: 8px;
 }
 
-.primary-click-btn {
+.wobbly-click-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
-  padding: 14px 20px;
-  background: var(--ink);
-  color: #FFF;
-  border-radius: var(--radius-sm);
+  gap: 12px;
+  padding: 13px 20px;
+  font-family: "DM Mono", monospace;
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  transition: var(--transition);
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  border: 2px solid var(--ink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: center;
 }
 
-.is-favorite .primary-click-btn {
-  background: var(--terra);
+.btn-pop {
+  background: #FEF08A;
+  box-shadow: 4px 4px 0px var(--ink);
+}
+.btn-pop:hover {
+  background: #FDE047;
+  transform: translate(-2px, -2px) rotate(-0.5deg);
+  box-shadow: 6px 6px 0px var(--ink);
 }
 
-.primary-click-btn:hover {
-  background: var(--ink);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(22, 20, 18, 0.2);
+.btn-fruit {
+  background: #FED7AA;
+  box-shadow: 4px 4px 0px var(--ink);
+}
+.btn-fruit:hover {
+  background: #FDBA74;
+  transform: translate(-2px, -2px) rotate(0.5deg);
+  box-shadow: 6px 6px 0px var(--ink);
 }
 
-.is-favorite .primary-click-btn:hover {
-  background: #BE3D17;
-  box-shadow: 0 6px 20px rgba(217, 85, 43, 0.4);
+.btn-coast {
+  background: #FECDD3;
+  box-shadow: 4px 4px 0px var(--ink);
+}
+.btn-coast:hover {
+  background: #FDA4AF;
+  transform: translate(-2px, -2px) rotate(-0.5deg);
+  box-shadow: 6px 6px 0px var(--ink);
 }
 
-.primary-click-btn svg {
+.wobbly-arrow {
   transition: transform 0.2s ease;
 }
 
-.primary-click-btn:hover svg {
-  transform: translate(2px, -2px);
+.wobbly-click-btn:hover .wobbly-arrow {
+  transform: translateX(5px);
 }
 
 .button-subtitle {
@@ -1020,15 +983,11 @@ a {
 <header class="studio-top-bar">
   <div class="container top-bar-inner">
     <div class="studio-signature">
-      <span class="studio-pill">Studio Folio</span>
+      <span class="studio-pill">MANCH EGO :)</span>
       <span class="bio-quote-stamp">&ldquo;Crafted with Andalusian Soul&rdquo; &middot; Kelowna, BC</span>
     </div>
     <div class="top-bar-meta">
-      <span class="bespoke-guarantee-chip">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-        <span>100% Bespoke Studio Prototype &middot; Not AI Templates</span>
-      </span>
-      <span class="hide-mobile">Prepared for Evelyn</span>
+      <span class="mono" style="color:var(--ink);">research for evelyn :)</span>
     </div>
   </div>
 </header>
@@ -1036,33 +995,14 @@ a {
 <!-- EDITORIAL HERO -->
 <section class="editorial-hero">
   <div class="container">
-    <div class="custom-notice-badge">
-      ★ 100% Custom Designed For You &middot; Real Bespoke Code, Not AI Templates
-    </div>
-
-    <div class="hero-editorial-row">
+    <div class="hero-clean-center">
+      <div class="smile-mark-top">:)</div>
       <h1 class="hero-main-title">
         Three custom worlds for <em>MANCH EGO</em>.
       </h1>
-      <div class="hero-bespoke-statement">
-        <p class="hero-lead-text">
-          Every route is a <strong>complete, custom-designed working prototype</strong> crafted specifically for Evelyn and MANCH EGO &mdash; built by hand from scratch, never generic AI templates or drop-in themes.
-        </p>
-        <p class="hero-sub-text">
-          Click any concept or viewport below to interact with the working website live in a new tab.
-        </p>
-      </div>
-    </div>
-
-    <!-- PROMINENT CLICK-TO-DISPLAY AFFORDANCE BANNER -->
-    <div class="click-affordance-banner">
-      <div class="banner-left">
-        <span class="pulse-indicator"></span>
-        <span><strong>CLICK TO DISPLAY:</strong> Tap any preview frame or button below to launch the live working prototype in a new tab.</span>
-      </div>
-      <div class="banner-right-note">
-        Handcrafted Prototype &middot; Not AI Templates
-      </div>
+      <p class="hero-clean-sub">
+        custom built with research for evelyn &middot; not generic AI templates :)
+      </p>
     </div>
   </div>
 </section>
@@ -1075,16 +1015,16 @@ a {
       <!-- ===================================================================
            TILE 1: KELOWNA POP [CLIENT TOP FAVORITE]
            =================================================================== -->
-      <article class="tile-card is-favorite" id="tile-pop">
-        <div class="favorite-header-pill">
-          <span>★ Client Favorite &middot; Top Choice</span>
-          <span>Rank 01</span>
+      <article class="tile-card" id="tile-pop">
+        <div class="wobbly-header-pill pill-pop">
+          <span>★ favorite &middot; kelowna pop</span>
+          <span>01</span>
         </div>
 
         <header class="tile-header">
           <div class="tile-meta-row">
             <div class="tile-index-tag">
-              <span class="tile-num-badge">1</span>
+              <span class="tile-num-badge" style="background:var(--terra);">1</span>
               <span>Primary Route</span>
             </div>
             <span class="tile-route-label">Route D &middot; Pop</span>
@@ -1102,24 +1042,26 @@ a {
                 <span class="w-grn"></span>
               </div>
               <span class="click-to-display-pill">
-                <span>⚡ Click To Display</span> ↗
+                <span>click to view</span> ↗
               </span>
               <span class="browser-url-mono">manchego.ca/pop</span>
             </div>
 
-            <a href="manchego-D-vancouver-pop.html" target="_blank" rel="noopener" class="interactive-viewport-link" title="Click to display Kelowna Pop live">
+            <a href="manchego-D-vancouver-pop.html" target="_blank" rel="noopener" class="interactive-viewport-link" title="Click to view Kelowna Pop live">
               <div class="scaled-viewport-area" style="background:#FBF1E4">
                 <iframe src="manchego-D-vancouver-pop.html" title="Kelowna Pop Preview" loading="lazy" scrolling="no" tabindex="-1"></iframe>
-                <div class="live-tap-prompt">
-                  <span class="live-pulse-dot"></span>
-                  <span>Click to display live prototype ↗</span>
+                <div class="wobbly-preview-tag tag-pop">
+                  <span>click here to view</span>
+                  <svg width="22" height="12" viewBox="0 0 22 12" fill="none">
+                    <path d="M2 6H18M18 6L13 1M18 6L13 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
                 </div>
                 <div class="viewport-hover-curtain">
                   <span class="curtain-cta-btn">
-                    <span>Click To Display Live</span>
+                    <span>Click To View Live</span>
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                   </span>
-                  <span class="curtain-hint">Opens working prototype in new tab</span>
+                  <span class="curtain-hint">Opens prototype in new tab</span>
                 </div>
               </div>
             </a>
@@ -1146,11 +1088,13 @@ a {
           </div>
 
           <div class="tile-action-row">
-            <a href="manchego-D-vancouver-pop.html" target="_blank" rel="noopener" class="primary-click-btn">
-              <span>Click To Display Live</span>
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <a href="manchego-D-vancouver-pop.html" target="_blank" rel="noopener" class="wobbly-click-btn btn-pop">
+              <span>click here to view</span>
+              <svg class="wobbly-arrow" width="34" height="16" viewBox="0 0 34 16" fill="none">
+                <path d="M2 8H28M28 8L20 2M28 8L20 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </a>
-            <span class="button-subtitle">Bespoke Prototype &middot; Custom Designed For You &middot; Zero AI</span>
+            <span class="button-subtitle">custom built with research &middot; not AI templates</span>
           </div>
         </div>
       </article>
@@ -1159,7 +1103,12 @@ a {
            TILE 2: STONE FRUIT [SECOND CHOICE]
            =================================================================== -->
       <article class="tile-card" id="tile-fruit">
-        <header class="tile-header" style="padding-top:24px;">
+        <div class="wobbly-header-pill pill-fruit">
+          <span>stone fruit &middot; orchard</span>
+          <span>02</span>
+        </div>
+
+        <header class="tile-header">
           <div class="tile-meta-row">
             <div class="tile-index-tag">
               <span class="tile-num-badge">2</span>
@@ -1179,25 +1128,27 @@ a {
                 <span class="w-yel"></span>
                 <span class="w-grn"></span>
               </div>
-              <span class="click-to-display-pill" style="background:#2E1A22;">
-                <span>⚡ Click To Display</span> ↗
+              <span class="click-to-display-pill">
+                <span>click to view</span> ↗
               </span>
               <span class="browser-url-mono">manchego.ca/fruit</span>
             </div>
 
-            <a href="manchego-B-stone-fruit.html" target="_blank" rel="noopener" class="interactive-viewport-link" title="Click to display Stone Fruit live">
+            <a href="manchego-B-stone-fruit.html" target="_blank" rel="noopener" class="interactive-viewport-link" title="Click to view Stone Fruit live">
               <div class="scaled-viewport-area" style="background:#FFFBF2">
                 <iframe src="manchego-B-stone-fruit.html" title="Stone Fruit Preview" loading="lazy" scrolling="no" tabindex="-1"></iframe>
-                <div class="live-tap-prompt">
-                  <span class="live-pulse-dot"></span>
-                  <span>Click to display live prototype ↗</span>
+                <div class="wobbly-preview-tag tag-fruit">
+                  <span>click here to view</span>
+                  <svg width="22" height="12" viewBox="0 0 22 12" fill="none">
+                    <path d="M2 6H18M18 6L13 1M18 6L13 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
                 </div>
                 <div class="viewport-hover-curtain">
                   <span class="curtain-cta-btn">
-                    <span>Click To Display Live</span>
+                    <span>Click To View Live</span>
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                   </span>
-                  <span class="curtain-hint">Opens working prototype in new tab</span>
+                  <span class="curtain-hint">Opens prototype in new tab</span>
                 </div>
               </div>
             </a>
@@ -1224,11 +1175,13 @@ a {
           </div>
 
           <div class="tile-action-row">
-            <a href="manchego-B-stone-fruit.html" target="_blank" rel="noopener" class="primary-click-btn">
-              <span>Click To Display Live</span>
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <a href="manchego-B-stone-fruit.html" target="_blank" rel="noopener" class="wobbly-click-btn btn-fruit">
+              <span>click here to view</span>
+              <svg class="wobbly-arrow" width="34" height="16" viewBox="0 0 34 16" fill="none">
+                <path d="M2 8H28M28 8L20 2M28 8L20 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </a>
-            <span class="button-subtitle">Bespoke Prototype &middot; Custom Designed For You &middot; Zero AI</span>
+            <span class="button-subtitle">custom built with research &middot; not AI templates</span>
           </div>
         </div>
       </article>
@@ -1237,7 +1190,12 @@ a {
            TILE 3: WOODBLOCK COAST [THIRD CHOICE]
            =================================================================== -->
       <article class="tile-card" id="tile-coast">
-        <header class="tile-header" style="padding-top:24px;">
+        <div class="wobbly-header-pill pill-coast">
+          <span>woodblock coast &middot; craft</span>
+          <span>03</span>
+        </div>
+
+        <header class="tile-header">
           <div class="tile-meta-row">
             <div class="tile-index-tag">
               <span class="tile-num-badge">3</span>
@@ -1257,25 +1215,27 @@ a {
                 <span class="w-yel"></span>
                 <span class="w-grn"></span>
               </div>
-              <span class="click-to-display-pill" style="background:#191512;">
-                <span>⚡ Click To Display</span> ↗
+              <span class="click-to-display-pill">
+                <span>click to view</span> ↗
               </span>
               <span class="browser-url-mono">manchego.ca/coast</span>
             </div>
 
-            <a href="manchego-A-woodblock-coast.html" target="_blank" rel="noopener" class="interactive-viewport-link" title="Click to display Woodblock Coast live">
+            <a href="manchego-A-woodblock-coast.html" target="_blank" rel="noopener" class="interactive-viewport-link" title="Click to view Woodblock Coast live">
               <div class="scaled-viewport-area" style="background:#A63A19">
                 <iframe src="manchego-A-woodblock-coast.html" title="Woodblock Coast Preview" loading="lazy" scrolling="no" tabindex="-1"></iframe>
-                <div class="live-tap-prompt">
-                  <span class="live-pulse-dot"></span>
-                  <span>Click to display live prototype ↗</span>
+                <div class="wobbly-preview-tag tag-coast">
+                  <span>click here to view</span>
+                  <svg width="22" height="12" viewBox="0 0 22 12" fill="none">
+                    <path d="M2 6H18M18 6L13 1M18 6L13 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
                 </div>
                 <div class="viewport-hover-curtain">
                   <span class="curtain-cta-btn">
-                    <span>Click To Display Live</span>
+                    <span>Click To View Live</span>
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                   </span>
-                  <span class="curtain-hint">Opens working prototype in new tab</span>
+                  <span class="curtain-hint">Opens prototype in new tab</span>
                 </div>
               </div>
             </a>
@@ -1302,11 +1262,13 @@ a {
           </div>
 
           <div class="tile-action-row">
-            <a href="manchego-A-woodblock-coast.html" target="_blank" rel="noopener" class="primary-click-btn">
-              <span>Click To Display Live</span>
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <a href="manchego-A-woodblock-coast.html" target="_blank" rel="noopener" class="wobbly-click-btn btn-coast">
+              <span>click here to view</span>
+              <svg class="wobbly-arrow" width="34" height="16" viewBox="0 0 34 16" fill="none">
+                <path d="M2 8H28M28 8L20 2M28 8L20 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </a>
-            <span class="button-subtitle">Bespoke Prototype &middot; Custom Designed For You &middot; Zero AI</span>
+            <span class="button-subtitle">custom built with research &middot; not AI templates</span>
           </div>
         </div>
       </article>
@@ -1364,7 +1326,7 @@ a {
 
       <div class="pane-actions-group">
         <a href="manchego-D-vancouver-pop.html" target="_blank" rel="noopener" class="pane-launch-btn" id="pane-launch">
-          <span>Click To Display Live</span>
+          <span>click here to view</span>
           <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <button class="pane-copy-note-btn" id="copy-note-btn">
@@ -1375,7 +1337,7 @@ a {
     </div>
 
     <div class="bespoke-manifesto">
-      <strong>Bespoke Studio Guarantee:</strong> Every prototype in this presentation was custom-designed and authored specifically for Evelyn and MANCH EGO. No Canva packs, no pre-purchased themes, and zero generic AI templates. Real design, real code, real craft.
+      <strong>MANCH EGO:</strong> Custom built with brand research for Evelyn &middot; not generic AI templates :)
     </div>
   </div>
 </section>
